@@ -108,7 +108,7 @@ int main(int argc, char **argv) {
 
   livox_node.pointclouddata_poll_thread_ = std::make_shared<std::thread>(&DriverNode::PointCloudDataPollThread, &livox_node);
   livox_node.imudata_poll_thread_ = std::make_shared<std::thread>(&DriverNode::ImuDataPollThread, &livox_node);
-  while (ros::ok()) {}
+  ros::spin();
 
   return 0;
 }
